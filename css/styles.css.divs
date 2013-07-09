@@ -1,0 +1,130 @@
+body {
+    background: black;
+    color: white;
+    font-size: 10pt;
+    font-family: sans-serif;
+    margin: 0;
+    padding: 10%; 
+}
+
+a,
+a:link,
+a:visited,
+a:active,
+a:hover {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+.clear { clear: both; }
+
+img { border: none; }
+
+h1 {
+    text-align: center;
+    text-decoration: underline;
+    font-family: serif;
+    color: white;
+    font-size: 1.8em;
+}
+h2 {
+    margin-top: 2.5em;
+    font-size: 1.7em;
+    text-decoration: underline;
+}
+h3 {
+    margin-top: 2em;
+    font-size: 1.3em;
+    text-decoration: underline;
+}
+p {
+    line-height: 150%;
+    text-align: justify;
+}
+pre {
+    font-family: sans-serif;
+    background: #222;
+}
+
+code {
+    font-family: monospace;
+    font-size: 0.9em;
+    line-height: 150%;
+}
+
+dl {
+    margin-left: 4ex;
+}
+
+    dl dt {
+        font-size: 0.9em;
+        font-weight: bold;
+        color: #eee;
+        font-family: monospace;
+    }
+        dl dd {
+            margin-bottom: 1.5em;
+            color: #ccc;
+            font-size: 0.85em;
+            line-height: 1.5em;
+        }
+
+
+ol {
+}
+    ol li {
+        margin-bottom: 1em;
+        line-height: 150%;
+    }
+
+ul {
+}
+    ul li {
+        margin-bottom: 0;
+    }
+
+
+
+#boardgame { 
+	/* basic styling */
+	width: 75%;
+	height: 600px;
+	margin: 0 auto;
+	background : #BBB;
+	font-size: 14px;
+	border: 1px solid #555;
+}
+
+#boardgame div.tile {
+	display: block;
+	width: 13%;
+	height: 75px;
+	background-color: white;
+	float: left;
+	margin: 1%;
+}
+
+#boardgame div.col1 {
+	clear: left;
+}
+
+#boardgame div.col6 {
+	float: right;
+}
+
+#boardgame #center {
+	display: block;
+	float: left;
+	width: 39%;
+	height: 75px;
+	margin: 1%;
+}
+
+/*
+#boardgame div.col1{  }
+#boardgame div.col1{  }
+*/

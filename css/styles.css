@@ -1,0 +1,159 @@
+body {
+    background: black;
+    color: white;
+    font-size: 10pt;
+    font-family: sans-serif;
+    margin: 0;
+    /*padding: 4% 0;*/
+}
+
+a,
+a:link,
+a:visited,
+a:active,
+a:hover {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+.clear { clear: both; }
+
+img { border: none; }
+
+h1 {
+    text-align: center;
+    text-decoration: underline;
+    font-family: serif;
+    color: white;
+    font-size: 1.8em;
+}
+h2 {
+    margin-top: 2.5em;
+    font-size: 1.7em;
+    text-decoration: underline;
+}
+h3 {
+    margin-top: 2em;
+    font-size: 1.3em;
+    text-decoration: underline;
+}
+p {
+    line-height: 150%;
+    text-align: justify;
+}
+pre {
+    font-family: sans-serif;
+    background: #222;
+}
+
+code {
+    font-family: monospace;
+    font-size: 0.9em;
+    line-height: 150%;
+}
+
+dl {
+    margin-left: 4ex;
+}
+
+    dl dt {
+        font-size: 0.9em;
+        font-weight: bold;
+        color: #eee;
+        font-family: monospace;
+    }
+        dl dd {
+            margin-bottom: 1.5em;
+            color: #ccc;
+            font-size: 0.85em;
+            line-height: 1.5em;
+        }
+
+
+ol {
+}
+    ol li {
+        margin-bottom: 1em;
+        line-height: 150%;
+    }
+
+ul {
+}
+    ul li {
+        margin-bottom: 0;
+    }
+
+#spinSound {
+	display: none;
+}
+
+#bigboard {
+	width: 90%;
+	margin: auto auto;
+	height: 600px;
+}
+
+#bigboard td {
+	border: 2px hidden;
+	width: 16%;
+	height: 20%;
+	background-color: white;
+	background-position: center center;
+	background-repeat: no-repeat; 
+	-webkit-border-radius: 25px;
+	-moz-border-radius: 25px;
+	border-radius: 25px;
+}
+
+#bigboard td.selected {
+	border: 8px dotted yellow;
+}
+
+#bigboard #center {
+	background-color: #e5e9ee;
+	background-image: url(http://eshots.com/images/eshots_logo.gif);
+	background-repeat:no-repeat;
+	background-position:center top;
+	text-align: center;
+}
+
+#bigboard #center #stop {
+	display: none;
+	width: 250px;
+	height: 100px;
+	background: red;
+	color: pink;
+	margin: auto auto;
+}
+
+#bigboard #center .teamChoice {
+	display: inline-block;
+	width: 24%;
+	height: 100px;
+	background: blue;
+	color: cyan;
+	margin: auto auto;
+}
+
+#scoreBoard {
+	background-color: lightyellow;
+	width: 100%;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	padding: 15px 0;
+}
+
+#scoreBoard div {
+	display: inline-block;
+	line-height:1.5em;
+	font-size: 24px;
+	color: #333;
+	width: 25%;
+	margin: auto;
+	text-align: center;
+}

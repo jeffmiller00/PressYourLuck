@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Press Your Luck Board</title>
+<script language="JavaScript" type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+<link href="css/styles.css" rel="stylesheet" type="text/css">
+
+<script src="js/base.js"></script>
+<script>
+$(document).ready(function() {
+
+	$("#bigboard").height(.8 * window.innerHeight);
+	$("#bigboard").css("margin-top", .05 * window.innerHeight);
+	//alert(.25*window.innerHeight);
+
+	initFrames();
+
+	var teamWidth = ((100/parseInt(numTeams)) - 1) + "%";
+	$("#bigboard #center .teamChoice").css("width", teamWidth );
+	$("#scoreBoard div").css("width", teamWidth );
+	
+	$("#bigboard #center #stop").click(function() {
+		stop = Date.parse(Date());
+		if (stop - start > 2000) {
+			$(this).attr("disabled", "disabled");
+			
+			stopChanging();
+			
+			$("#score" + $("#curTeam").val()).hide();
+			var newScore = getScore("#score" + $("#curTeam").val());
+			$("#score" + $("#curTeam").val()).text(newScore);
+			$("#score" + $("#curTeam").val()).fadeIn(5000);
+			
+			$(this).hide();
+			$(".teamChoice").fadeIn(5000);
+			$(this).removeAttr("disabled");
+		}
+	});
+	$(document).keypress(function(event) {
+		if (event.which == '106' && $("#bigboard #center #stop").is(":visible")) {
+			stop = Date.parse(Date());
+			if (stop - start > 2000) {
+			
+				$("#bigboard #center #stop").attr("disabled", "disabled");
+				
+				stopChanging();
+				
+				$("#score" + $("#curTeam").val()).hide();
+				var newScore = getScore("#score" + $("#curTeam").val());
+				$("#score" + $("#curTeam").val()).text(newScore);
+				$("#score" + $("#curTeam").val()).fadeIn(5000);
+				
+				$("#bigboard #center #stop").hide();
+				$(".teamChoice").fadeIn(5000);
+				$("#bigboard #center #stop").removeAttr("disabled");
+			}
+		} else {
+			event.preventDefault();
+		}
+	});
+
+
+	$(".teamChoice").click(function() {
+		$("#curTeam").val(this.value);
+		$(".teamChoice").hide();
+
+		startChanging();
+
+		$("#stop").fadeIn(2500);
+	});
+
+
+	$(window).bind('beforeunload', function(){ 
+		return 'Are you sure you want to leave?  This will clear the scores!';
+	});
+});
+</script>
+
+</head>
+
+
+<body>
+	<table id="bigboard">
+		<tr>
+			<td id="tile0"></td>
+			<td id="tile1"></td>
+			<td id="tile2"></td>
+			<td id="tile3"></td>
+			<td id="tile4"></td>
+			<td id="tile5"></td>
+		</tr>
+		<tr>
+			<td id="tile6"></td>
+			<td id="center" colspan="4" rowspan="3">
+				<input type="hidden" id="curTeam" value="-1" />
+				<script>
+					for(var i=1; i<=numTeams; i++)
+						document.write("<button class='teamChoice' value='" +i+ "'>Team " +i+ "</button>" );
+				</script>
+				<button id="stop">STOP!</button>
+			</td>
+			<td id="tile7"></td>
+		</tr>
+		<tr>
+			<td id="tile8"></td>
+			<!-- Center tile -->
+			<td id="tile9"></td>
+		</tr>
+		<tr>
+			<td id="tile10"></td>
+			<!-- Center tile -->
+			<td id="tile11"></td>
+		</tr>
+		<tr>
+			<td id="tile12"></td>
+			<td id="tile13"></td>
+			<td id="tile14"></td>
+			<td id="tile15"></td>
+			<td id="tile16"></td>
+			<td id="tile17"></td>
+		</tr>
+	</table>
+
+	<img src="http://2.bp.blogspot.com/_pP4JIb2v5LA/TH9nWQ4VwCI/AAAAAAAABTQ/PFM1X6LB-ug/s1600/Smiley.png" alt="smile" id="imgSmile" width=0></img>
+
+	<div id="scoreBoard">
+		<script>
+			for(var i=1; i<=numTeams; i++)
+				document.write("<div id='score" +i+ "'>0</div>" );
+		</script>
+	</div>
+</body>
+</html>
